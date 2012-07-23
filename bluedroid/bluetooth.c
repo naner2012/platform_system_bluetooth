@@ -169,6 +169,10 @@ int bt_enable() {
     sleep(5);
 #endif
 
+#if defined(SW_BOARD_HAVE_BLUETOOTH_RTK)
+	usleep(1000000);  // 1 seconds
+#endif
+
     LOGI("Starting hciattach daemon");
     if (property_set("ctl.start", "hciattach") < 0) {
         LOGE("Failed to start hciattach");

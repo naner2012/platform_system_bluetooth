@@ -10,6 +10,11 @@ ifeq ($(BOARD_HAVE_BLUETOOTH_CSR),true)
 LOCAL_CFLAGS:= -DBOARD_HAVE_BLUETOOTH_CSR
 endif
 
+# realtek rtl8723as combo bt
+ifeq ($(SW_BOARD_HAVE_BLUETOOTH_RTK), true)
+LOCAL_CFLAGS += -DSW_BOARD_HAVE_BLUETOOTH_RTK
+endif
+
 LOCAL_SRC_FILES := \
 	bluetooth.c
 
